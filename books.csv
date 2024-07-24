@@ -1,5 +1,4 @@
 "book_id","title","author","isbn","publisher","year_published","category","copies_available"
 "B0001","The Great Gatsby","F. Scott Fitzgerald","9780743273565","Scribner",1925,"Fiction",5
 "B0002","1984","George Orwell","9780451524935","Signet Classics",1949,"Dystopian",3
-"B0003","To Kill a Mockingbird","Harper Lee","9780061120084","J.B. Lippincott &
-Co.",1960,"Fiction",3
+"B0003","To Kill a Mockingbird","Harper Lee","9780061120084","J.B. Lippincott & Co.",1960,"Fiction",3

@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Book Details</title>
+ <link rel="stylesheet" href="styles.css">
+ <script src="input_validation.js" defer></script>
+</head>
+<body>
+ <h1>Book Details</h1>
+ <nav>
+ 
+<a href="index.html">Home</a>
+ 
+<button onclick="history.back()">Back</button>
+ </nav>
+ <form id="book-details-form" action="http://localhost/DBproject/php/bDetails.php" method="post">
+    <label for="book_id">Book ID:</label>
+    <input type="text" id="book_id" name="book_id"><br><br>
+ 
+    <button type="submit">View Details</button>
+ </form>
+ <div id="book-details-result"></div>
+</body>
+</html>

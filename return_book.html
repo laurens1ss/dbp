@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Return Book</title>
+ <link rel="stylesheet" href="styles.css">
+ <script src="input_validation.js" defer></script>
+</head>
+<body>
+ <h1>Return Book</h1>
+ <nav>
+ 
+<a href="index.html">Home</a>
+ 
+<button onclick="history.back()">Back</button>
+ </nav>
+ <form id="return-book-form" action="http://localhost/DBproject/php/return_book.php" method="post">
+    <label for="book_id">Book ID:</label>
+    <input type="text" id="book_id" name="book_id"><br><br>
+    
+    <label for="patron_id">Patron ID:</label>
+    <input type="text" id="patron_id" name="patron_id"><br><br>
+    
+    <button type="submit">Return</button>
+ </form>
+ <div id="return-result"></div>
+</body>
+</html>

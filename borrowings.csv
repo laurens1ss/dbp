@@ -1,4 +1,3 @@
-borrowings.csv
 "borrowing_id","patron_id","book_id","librarian_id","borrow_date","return_date"
 1,"P000001","B0001","L001","2023-07-01","0000-00-00"
 2,"P000002","B0002","L002","2023-07-02","2023-07-10"

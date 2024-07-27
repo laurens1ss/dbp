@@ -1,0 +1,44 @@
+CREATE TABLE Book (
+    ISBN VARCHAR(13) PRIMARY KEY NOT NULL,
+    Title VARCHAR(255) NOT NULL,
+    Author VARCHAR(255) NOT NULL,
+    Publisher VARCHAR(255) NOT NULL,
+    YearPublished INT NOT NULL,
+    Category VARCHAR(100),
+    CopiesAvailable INT DEFAULT 1 NOT NULL
+);
+
+CREATE TABLE Patron (
+    PatronID CHAR(7)  PRIMARY KEY NOT NULL,
+    FirstName VARCHAR(100) NOT NULL,
+    LastName VARCHAR(100) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    PhoneNumber VARCHAR(15),
+    Address VARCHAR(255)
+);
+
+CREATE TABLE Librarian (
+    LibrarianID CHAR(4) DEFAULT ‘0000’ NOT NULL PRIMARY KEY,
+    MembershipID INT NOT NULL,
+    FirstName VARCHAR(100) NOT NULL,
+    LastName VARCHAR(100) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    PhoneNumber VARCHAR(15),
+    EmploymentDate DATE NOT NULL,
+    );
+
+CREATE TABLE Borrow (
+    BorrowID INT NOT NULL PRIMARY KEY,
+    PatronID INT NOT NULL,
+    LibrarianID CHAR(4) DEFAULT ‘0000’ NOT NULL,
+    ISBN VARCHAR(13) NOT NULL,
+    BorrowDate DATE,
+    ReturnDate DATE,
+    PRIMARY KEY (PatronID, ISBN, BorrowDate),
+    CONSTRAINT fk_patron
+    FOREIGN KEY (PatronID) REFERENCES Patron(PatronID) ON DELETE NO ACTION ON UPDATE CASCADE,
+    CONSTRAINT fk_book
+    FOREIGN KEY (ISBN) REFERENCES Book(ISBN) ON DELETE NO ACTION ON UPDATE CASCADE,
+     CONSTRAINT fk_librarian 
+     FOREIGN KEY (LibrarianID) REFERENCES Librarians(LibrarianID) ON DELETE SET DEFAULT ON UPDATE CASCADE
+);
